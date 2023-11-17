@@ -1,1 +1,2 @@
-module.exports = {"URI":"mongodb://127.0.0.1:27017/AssignmentTrackerDB"}
+//module.exports = {"URI":"mongodb://127.0.0.1:27017/AssignmentTrackerDB"}
+module.exports = {"URI":"mongodb+srv://pythongirl7:Z3k4AjYHa27PgBDy@mongodbserver.sbiwtuc.mongodb.net/AssignmentTrackerDB"} //online
