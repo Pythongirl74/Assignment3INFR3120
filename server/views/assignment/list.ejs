@@ -4,24 +4,36 @@
     <div class="row">
         <div class="offset-md-1 col-md-10">
             <h1 style="margin-bottom: 20px;"><%= title %></h1>
+            <% if(typeof displayName=='string' && displayName) { %>
             <a href="/assignments/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add Assignment
             </a>
             <br><br>
+            <% } %>
             <table class="table table-bordered table-striped table-hover">
                 <thead class="table-dark">
                     <tr class="d-flex">
+                    <% if(typeof displayName=='string' && displayName) { %>
                         <th class="text-center col-2">Assignment Name</th>
                         <th class="text-center col-2">Course</th>
                         <th class="text-center col-1">Due Date</th>
                         <th class="text-center col-4">Notes</th>
-                        <th class="text-center col-1">Edit</th>
-                        <th class="text-center col-1">Delete</th>
+                        //<th class="text-center col-1">Edit</th>
+                        //<th class="text-center col-1">Delete</th>
+                        <th class="text-center col-1"></th>
+                        <th class="text-center col-1"></th>
+                    <% } else { %>
+                        <th class="text-center col-3">Assignment Name</th>
+                        <th class="text-center col-3">Course</th>
+                        <th class="text-center col-2">Due Date</th>
+                        <th class="text-center col-4">Notes</th>
+                    <% } %>
                     </tr>
                 </thead>
                 <tbody>
                     <% for(let count=0; count<AssignmentList.length; count++) { %>    
                         <tr class="d-flex">
+                        <% if(typeof displayName=='string' && displayName) { %>
                             <td class="text-center col-2"><%= AssignmentList[count].AssignmentName %></td>
                             <td class="text-center col-2"><%= AssignmentList[count].Course %></td>
                             <td class="text-center col-1"><%= AssignmentList[count].DueDate %></td>
@@ -39,6 +51,13 @@
                                     <i class="fas trash-alt"></i> Delete
                                 </a>
                             </td>
+                        <% } else { %>
+                            <td class="text-center col-3"><%= AssignmentList[count].AssignmentName %></td>
+                            <td class="text-center col-3"><%= AssignmentList[count].Course %></td>
+                            <td class="text-center col-2"><%= AssignmentList[count].DueDate %></td>
+                            <td class="text-center col-4"><%= AssignmentList[count].Notes %></td>
+                        <% } %>
+                        
                             <script>
                                 const deleteButtons = document.querySelectorAll('.delete-btn');
                                 deleteButtons.forEach(button => {

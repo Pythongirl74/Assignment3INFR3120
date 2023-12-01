@@ -7,8 +7,8 @@ module.exports.DisplayAssignmentList = async (req, res, next) => {
         const AssignmentList = await Assignment.find();
         res.render('assignment/list', {
             title: 'Assignment List',
-            AssignmentList: AssignmentList 
-
+            AssignmentList: AssignmentList,
+            displayName: req.user ? req.user.displayName : ''
         });
 
     } catch (err) {
@@ -30,6 +30,7 @@ module.exports.AddAssignment = async (req, res, next) => {
         res.render('assignment/list', {
             title: 'Assignment List',
             AssignmentList: AssignmentList,
+            displayName: req.user ? req.user.displayName : '',
             error: 'Error on the server'
         });
     }
@@ -92,6 +93,7 @@ module.exports.EditAssignment = async (req, res, next) => {
         const assignmentToEdit = await Assignment.findById(id);
         res.render('assignment/edit', {
             title: 'Edit Assignment',
+            displayName: req.user ? req.user.displayName : '',
             Assignment: assignmentToEdit
         });
     } catch (error) {

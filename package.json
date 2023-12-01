@@ -12,6 +12,7 @@
     "bootstrap": "^5.3.2",
     "bson": "^6.2.0",
     "bytes": "^3.0.0",
+    "connect-flash": "^0.1.1",
     "content-disposition": "^0.5.2",
     "content-type": "^1.0.5",
     "cookie": "^0.4.1",
@@ -26,6 +27,7 @@
     "escape-html": "^1.0.3",
     "etag": "^1.8.1",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "finalhandler": "^1.1.1",
     "forwarded": "^0.2.0",
     "fresh": "^0.5.2",
@@ -53,6 +55,9 @@
     "on-finished": "^2.3.0",
     "on-headers": "^1.0.2",
     "parseurl": "^1.3.3",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^8.0.0",
     "path-to-regexp": "^0.1.7",
     "proxy-addr": "^2.0.7",
     "punycode": "^2.3.1",
@@ -82,5 +87,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.17.10",
+    "@types/mongoose": "^5.11.97",
+    "@types/passport": "^1.0.16",
+    "@types/passport-local": "^1.0.38",
+    "@types/passport-local-mongoose": "^6.1.5"
+  }
 }
